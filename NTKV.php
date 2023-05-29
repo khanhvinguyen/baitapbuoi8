@@ -13,9 +13,9 @@ checkNumber($number);
 
 <!-- Câu 2. Viết chương trình PHP, sử dụng câu lệnh if else để xếp hạng học lực của học sinh dựa trên điểm điểm thi giữa kỳ, điểm thi cuối kỳ. -->
 <?php
-function averageScore($midleScore, $finalScore)
+function averageScore($middleScore, $finalScore)
 {
-    $average = ($midleScore * 0.3) + ($finalScore * 0.7);
+    $average = ($middleScore * 0.3) + ($finalScore * 0.7);
     return $average;
 }
 function academicRanking($average)
