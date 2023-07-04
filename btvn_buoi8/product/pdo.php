@@ -36,13 +36,6 @@
         $update->execute($data);
     }
     
-function findByprodId($data) {
-    $sql = "SELECT * FROM product where prodId=:id";
-    $stmt = prepareSQL($sql);
-    $stmt->execute($data);
-    return $stmt->fetch();
-}
 
-?>
 
 
