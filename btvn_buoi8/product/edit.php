@@ -1,5 +1,4 @@
-﻿
-<?php
+﻿<?php
     require_once "pdo.php";
     $categories = all();
 ?>
@@ -12,7 +11,7 @@
 <body>
     <div class="container mt-3">
         <h3>Update Product</h3>
-        <?php
+        <?php 
             $prodId = [
                 'id' => $_GET['id']
             ];
@@ -20,9 +19,9 @@
             $cateId = [
                 'id' => $prodArr['cateId']
             ];
-            $cateArr = getOneProdData($cateId);
+            $cateArr = getProdData($cateId);
         ?>
-        <form action="action-update.php?id=<?=$prodArr['prodId'] ?>" method="POST">
+        <form action="action_update.php?id=<?=$prodArr['prodId'] ?>" method="POST">
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input required type="text" class="form-control" name="prodName" value="<?= $prodArr['prodName']?>">
@@ -34,11 +33,10 @@
         <div class="mb-3">
             <label class="form-label">Category</label>
             <select class="form-select" aria-label="Default select example" name="cateId">
-                <option selected value="<?= $cateArr[0]['id']?>"><?= $cateArr[0]['name']?></option>
-                <?php
-                    foreach($cateArrs as $dataCate)
+                <?php 
+                    foreach($categories as $dataCate)
                         if($dataCate['id'] == $cateArr['id'])
-                            continue;                            
+                            continue;                             
                         else{?>
                             <option value="<?= $dataCate['id']?>"><?= $dataCate['name']?></option>
                 <?php } ?>
